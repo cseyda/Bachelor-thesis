@@ -1,0 +1,56 @@
+% !TeX program = lualatex
+% !TeX root = ../../main.tex
+\begin{tikzpicture}
+\draw 	(0,-1em) node[inner sep=5pt, minimum width=15em, minimum height=2em, draw] (PM) {Power Meter}
+
+		(-6em,4em) node[rectangle split, rectangle split parts=2, inner sep=5pt,draw] (N1) {OS \nodepart{second} Node}
+		(-2em,4em) node[rectangle split, rectangle split parts=2, inner sep=5pt,draw] (N2) {OS \nodepart{second} Node}
+		(2em,4em) node[rectangle split, rectangle split parts=2, inner sep=5pt,draw] (N3) {OS \nodepart{second} Node}
+		(6em,4em) node[rectangle split, rectangle split parts=2, inner sep=5pt,draw] (N4) {OS \nodepart{second} Node}
+
+		(0,14.5em) node[inner sep=5pt, minimum width=29em, minimum height=10em, draw] (W) {Wrapper}
+
+		(0,11.5em) node[inner sep=5pt, minimum width=15em, minimum height=2em, draw] (PMP) {Parallel MPI Program}
+		(0,17.5em) node[inner sep=5pt, minimum width=15em, minimum height=2em, draw] (TWL) {Trace Writing Library}
+		(-9em,14.5em) node[inner sep=5pt, minimum height=2em, text width=8em, draw] (PTL) {Power Tracing Library}
+		(9em,14.5em) node[inner sep=5pt, minimum height=2em, text width=9em, draw] (RUTL) {Resources Utilization Tracing Library}
+
+		(0,21.5em) node[inner sep=5pt, minimum width=4, minimum height=2em, draw] (TF) {Trace Files}
+
+%		(11.5em,21.5em) node[inner sep=5pt, minimum width=4, minimum height=2em, draw] (XF) {XML File}
+
+		(0,25em) node[inner sep=5pt, minimum width=4, minimum height=2em, draw] (HDTF) {HDTraceFormat}
+
+		(11.5em,29em) node[inner sep=5pt, minimum width=4, minimum height=2em, draw] (HDPE) {HDPowerEstimation}
+		
+%		(-11.5em,29em) node[inner sep=5pt, minimum width=6em, minimum height=2em, draw] (JFC) {JFreeChart}
+
+		(-11.5em,25em) node[inner sep=5pt, minimum width=6em, minimum height=2em, draw] (HDJ) {Sunshot}
+
+;
+		\draw[<-, line width=1.3pt] (-6em,0em) -- (N1);
+		\draw[<-, line width=1.3pt] (-2em, 0em) -- (N2);
+		\draw[<-, line width=1.3pt] (2em, 0em) -- (N3);
+		\draw[<-, line width=1.3pt] (6em, 0em) -- (N4);
+
+		\draw[<->, line width=1.3pt] (-6em, 9.5em) -- (N1);
+		\draw[<->, line width=1.3pt] (-2em, 9.5em) -- (N2);
+		\draw[<->, line width=1.3pt] (2em, 9.5em) -- (N3);
+		\draw[<->, line width=1.3pt] (6em, 9.5em) -- (N4);
+
+		\draw[line width=2.2pt, line join=miter] (-7.35em, 5.5em) -- (-7.35em, 7.5em) -- (-7em, 7.5em);
+		\draw[->, line width=2.2pt] (-7.35em, 7.5em) -| (RUTL);
+		\draw[line width=2.2pt] (-3.35em, 7.5em) -- (-3.35em, 5.5em);
+		\draw[line width=2.2pt] (0.65em, 7.5em) -- (0.65em, 5.5em);
+		\draw[line width=2.2pt] (4.65em, 7.5em) -- (4.65em, 5.5em);
+
+		\draw[->, line width=2.2pt] (PM) -| (PTL);
+		\draw[->, line width=1.3pt] (TWL) -- (TF);
+		\draw[<->, line width=1.3pt] (TF) -- (HDTF);
+		\draw[<-, line width=1.3pt] (HDTF) |- (HDPE) node[midway, above, pos=0.8, text width=10em, font=\fontsize{10}{11}\selectfont] {Component Estimated Energy Consumption};
+		\draw[->, line width=1.3pt] (HDTF) -| (HDPE) node[midway, above left, text width=6em, font=\fontsize{10}{11}\selectfont] {Node Energy Consumption};
+%		\draw[dotted, line width=1.3pt] (XF) -- (HDPE) node[midway, below right, text width=6em, font=\fontsize{10}{11}\selectfont] {Component Utilization};
+
+%		\draw[dotted, <-, line width=1.3pt] (JFC) -- (HDPE) node[midway, above, pos=0.8, text width=10em, font=\fontsize{10}{11}\selectfont] {Component Estimated Energy Consumption};
+		\draw[<-, line width=1.3pt] (HDJ) -- (HDTF);
+\end{tikzpicture}

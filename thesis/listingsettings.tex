@@ -1,0 +1,130 @@
+% !TeX program = pdflatex
+% !TeX root = main.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Listing relevant definitions
+%
+% Colors used by Flex Builder 3.
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{flexred}{rgb}{0.65, 0.01, 0.01}
+\definecolor{flexgreen}{rgb}{0, 0.6, 0}
+\definecolor{flexgray}{rgb}{0.25, 0.37, 0.75}
+\definecolor{flexblue}{rgb}{0, 0.2, 1}
+\definecolor{flexfunction}{rgb}{0, 0.7, 0.9}
+\definecolor{flexvar}{rgb}{0.4, 0.6, 0.8}
+\definecolor{black}{rgb}{0, 0, 0}
+
+% General settings for listings
+\lstset{
+	framexleftmargin = 1mm, 
+	frame = lines, 
+	columns = fixed,
+	%numbers = left, 
+	numberstyle=\scriptsize,
+	numberblanklines=true,
+	%numberstyle = \tiny, 
+	rulecolor = \color{black}, 
+	xleftmargin = 2.5mm, 
+	xrightmargin = 2.5mm,
+	tabsize = 4
+}
+
+% Define new language for listings.
+\lstdefinelanguage{PBL} {
+   basicstyle=\ttfamily,
+   sensitive=true,
+   morecomment=[l][\color{flexgreen}\ttfamily]{\#},
+   morecomment=[s][\color{flexgreen}\ttfamily]{/*}{*/},
+   morecomment=[s][\color{flexfunction}\ttfamily]{<}{>},
+   morestring=[b]",
+   stringstyle=\color{flexred}\textbf,
+   commentstyle=\color{flexgreen},
+   showstringspaces=false,
+   showspaces=false,
+   breaklines=true,
+   showtabs=false,
+   emph =
+   {[1]
+      time, repeat, print, group, define, groups, barrier, pattern
+   },
+   emphstyle={[1]\color{flexblue}\textbf},
+   emph =
+   {[2]
+      fopen, fclose, fwrite, fread,
+      write, open, close, append, read,
+      stat, lookup, mkdir, rmdir, create, delete,
+      pfopen, pfclose, pfwrite, pfread,
+      pwrite, pread
+   },
+   emphstyle={[2]\color{purple}\textbf},
+   emph =
+   {[3]
+      function
+   },
+   emphstyle={[3]\color{flexfunction}\textbf},
+   emph =
+   {[4]
+      \$\$rank, \$\$rand, \$\$crand
+   },
+   emphstyle={[4]\color{flexvar}\textbf}
+}
+
+\lstdefinelanguage{JavaScript} {
+   basicstyle=\ttfamily,
+   sensitive=true,
+   morecomment=[l]{//},
+   morecomment=[s]{/*}{*/},
+   %morecomment=[s][\color{flexfunction}\ttfamily]{<}{>},
+   morestring=[b]",
+   morestring=[b]',
+   morestring=[s][\color{purple}\ttfamily]{\{\%}{\%\}},
+   morestring=[s][\color{purple}\ttfamily]{\{\{}{\}\}},
+   %morestring=[s][\color{purple}\ttfamily]{[}{]},
+   stringstyle=\color{flexred}\textbf,
+   commentstyle=\color{flexgray},
+   %numberstyle=\color{flexgreen},
+   showstringspaces=false,
+   showspaces=false,
+   breaklines=true,
+   showtabs=false,
+%
+   emph =
+   {[1]
+      var, new, this,
+      for, if, else, break, 
+      length, find, css, push, ready, ajax, round, attr,
+   },
+   emphstyle={[1]\color{flexblue}\textbf},
+%   
+   emph = 
+   {[2]
+      isNaN, function, false, true
+   },
+% check why not highliting
+   emphstyle={[2]\color{flexfunction}\textbf},
+%  
+   otherkeywords={+, -, =, <, >, !},%, /},
+   emph = 
+   {[3]
+      +, -, =, <, >, !%, /
+   },
+   emphstyle={[3]\color{flexgreen}\textbf},
+%   
+%   alsoletter={0,1,2,3,4,5,6,7,8,9},
+%   emph = 
+%   {[4]
+%      0,1,2,3,4,5,6,7,8,9
+%   },
+%   emphstyle={[4]\color{flexgreen}\textbf},
+}
+
+% Define new language for listings.
+\lstdefinelanguage{Plain} {
+   basicstyle=\ttfamily,
+   sensitive=true,
+   showspaces=false,
+   breaklines=true,
+   showtabs=false,
+   emph=false,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

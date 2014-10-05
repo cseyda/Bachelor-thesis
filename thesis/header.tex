@@ -1,0 +1,194 @@
+% !TeX program = lualatex
+% !TeX root = main.tex
+\documentclass[
+	fontsize=12pt,
+	a4paper,	% paper format
+	%BCOR=10mm,	% binding correction
+	%DIV=calc,	% stripe size for margin calculation
+%
+	%listof=totoc,	% table listing in toc
+	%bibliography=totoc,	% bibliography in toc
+	%index=totoc,	% index in toc
+	%parskip,	% paragraph skip instad of paragraph indent
+	%
+	% comment out, when generating pdf for PC
+	%twoside,
+	%cleardoublepage=empty,
+	%openright,
+	english,%
+	%draft=true, %careful, eliminates some pdf links and settings through hyperref
+]{scrreprt}
+
+% table of contents depth
+\setcounter{tocdepth}{2}
+
+\usepackage[automark, footsepline]{scrpage2}
+\clearscrheadfoot 
+\ifoot[{{}}] {{}\headmark}
+\ofoot{\pagemark}
+\pagestyle{scrheadings} 
+\renewcommand*{\chaptermarkformat}[1]{#1} 
+\renewcommand*{\sectionmarkformat}[1]{#1} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\Title{Bachelor-Thesis}
+\newcommand*\Subject{Estimation of Power Consumption of DVFS-Enabled Processors}
+\newcommand*\Author{Christian Seyda}
+\newcommand*\Keywords{keywords}
+
+\newcommand{\superpar}{
+	\begin{center}
+		\ast \quad \ast \quad \ast
+	\end{center}
+}
+
+% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% set language
+\usepackage{babel}
+
+% needs substr package installed.
+\usepackage{isodate}
+%\printdate{24.12.2000}
+
+% Index-generation
+\usepackage{makeidx}
+
+% Special \LaTex symbols (e.g. \BibTeX):
+\usepackage{doc}
+
+% Include Graphic-files:
+\usepackage{graphicx}
+% text surrounded figures
+\usepackage{wrapfig}
+% place picture exactly [H]ere
+\usepackage{here} 
+
+\usepackage{multicol}
+%http://stackoverflow.com/questions/1398127/breaking-a-list-into-multiple-columns-in-latex
+
+%\documentclass{article}
+%\usepackage{multicol}
+%
+%\begin{document}
+%\begin{multicols}{2}
+%\begin{enumerate}
+%    \item a
+%    \item b
+%    \item c
+%    \item d
+%    \item e
+%    \item f
+%\end{enumerate}
+%\end{multicols}
+%\end{document}
+
+% Color!
+\usepackage[table]{xcolor}
+% change rowcolors
+\rowcolors{2}{gray!20}{white}%{cyan!40}
+
+% needed for pie chart
+\usepackage{calc}
+\usepackage{ifthen}
+%
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.multipart} 
+\usetikzlibrary{positioning}
+\usetikzlibrary{topaths}
+
+% Include PDF links
+\usepackage[pdftex, pdfpagelabels, pagebackref=false, draft=false]{hyperref}
+\hypersetup{
+	pdftitle={\Title},%
+	pdfauthor={\Author},%
+	pdfcreator={luaLaTeX},%
+	pdfborder=0 0 0,%
+	%breaklinks=true,%
+	bookmarksopen=true,%
+	bookmarksnumbered=true,%
+	linkcolor=blue,%
+	urlcolor=blue,%
+	citecolor=blue,%
+	colorlinks=false}
+
+%Backlinks vom LitVerz zu den Seiten
+% #1: number of distinct back references
+% #2: backref list with distinct entries
+% #3: number of back references including duplicates
+% #4: backref list including duplicates
+%\RequirePackage[hyperpageref]{backref}
+%\renewcommand{\backreflastsep}{ and~}
+%\renewcommand{\backreftwosep}{ and~}
+%\renewcommand{\backref}[1]{}% for backref < 1.33 necessary
+%\renewcommand{\backrefalt}[4]{ 
+%   \ifnum#1=0
+%      %No cited.         
+%   \else
+%      \ifnum#1=1
+%         \footnotesize (Cited on page #2)
+%      \else
+%         \footnotesize (Cited on pages #2)
+%      \fi
+%   \fi
+%}
+
+% Inlcude citation package
+\usepackage{cite}
+
+% Include code listings and colors for syntax highlighting
+\usepackage{listings}
+\input{listingsettings}
+\lstloadlanguages{C, bash}
+%\lstset{backgroundcolor=\color{gray!20}, framerule=0pt}
+
+\usepackage{geometry}
+
+\usepackage{caption, subcaption}
+
+% Nice looking big Letters over some Lines
+\usepackage{lettrine}
+
+% notes
+%
+% \todo{notizen}
+% \missingfigure{notizen}
+\usepackage{todonotes}
+
+% equations
+%
+%\begin{align} E &= MC^2 \end{align}
+\usepackage{amsmath}
+
+% for \rhsc
+\usepackage{amssymb}
+\usepackage{mathabx}
+
+% landscape pages
+%\usepackage{lscape}
+\usepackage{rotating}
+
+% good looking tables
+\usepackage{longtable}
+\usepackage{booktabs}
+%\usepackage{multirow}
+
+% activate microtypographic extensions
+\usepackage[protrusion=true,expansion=true]{microtype}
+\input{protrusion}
+
+% Use system fonts
+\usepackage{fontspec}
+\setmainfont[Numbers=OldStyle, Ligatures=TeX]{Linux Libertine O}
+\setsansfont[Numbers=OldStyle, Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=0.8]{DejaVu Sans Mono}
+
+% if you have the guts setting linespread to 1,5
+%\usepackage{setspace}
+%\setstretch{1,5}
+
+% OTHER SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Choose language
+\newcommand{\setlang}[1]{\selectlanguage{#1}\nonfrenchspacing}

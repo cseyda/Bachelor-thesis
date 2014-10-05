@@ -1,0 +1,3 @@
+"" "rest of the system" "NIC" "HDD" "RAM" "CPU"
+"Load" 6.31 2 7.02 13.59 116
+"Idle" 6.31 0.78 4.42 10.99 56.2

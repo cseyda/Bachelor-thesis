@@ -1,0 +1,73 @@
+% !TeX program = lualatex
+% !TeX root = main.tex
+\input{header}
+
+\begin{document}
+
+\input{titlepage}
+
+%
+\noindent
+Ich versichere, dass ich diese Bachelor-Arbeit selbstständig verfasst und nur die angegebenen Quellen und Hilfsmittel verwendet habe.\\[2em]
+%
+28. März 2011, .....................................
+\newpage
+
+% Add the Dedication (Danke Aussage)
+%\include{Dedication}
+%
+
+% Introduction (Einleitung):
+\include{abstract}
+
+% table of contents
+\tableofcontents
+%enlarge toc, if only few entries are on the next page
+\addtocontents{toc}{\protect\enlargethispage{%5
+\baselineskip}} 
+
+% table of todos (package todo)
+%\listoftodos
+
+% pagenumber on table of contents?
+\thispagestyle{empty}
+
+\lstset{language=Plain}
+
+
+%\setcounter{chapter}{-1}
+\include{introduction}
+\include{model}
+\include{interfaces}
+\include{implementation}
+\include{evaluation}
+
+% Appendix (Anhänge), could have multiple chaper-files:
+\appendix
+
+% big letters
+\pagenumbering{Roman}
+\clearscrheadfoot 
+\cfoot{\pagemark}
+
+\include{appendix}
+% List of figures (Abbildungsverzeichnis):
+\listoffigures
+% List of tables (Tabellenverzeichnis):
+\listoftables
+% List of listings (Codeverzeichnis):
+\lstlistoflistings
+% Glossary (Glossar):
+%\include{Glossary}
+% List of formulae (Liste der Formelzeichen):
+%\include{Formulae}
+% Abbreviations (Abkrzungsverzeichnis):
+%\include{Abbreviations}
+
+% References (Literaturverzeichnis):
+% a) Style (with numbers: use unsrt, alpha sorted: use alpha):
+\bibliographystyle{alpha}%{unsrt}
+% b) The File:
+\bibliography{bibliography}
+
+\end{document}

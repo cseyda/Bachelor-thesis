@@ -1,0 +1,332 @@
+% !TeX program = lualatex
+% !TeX root = main.tex
+\chapter{Appendix}
+
+%
+%
+\section*{Tables}
+Table\,\ref{tbl:approximations} compares the accuracy of the three processor power consumption approximations (see \ref{sec:approx}) for three processors based on their actual P-states, based on table\,\ref{tbl:pstates}. All values are simple differences. Last column shows the total variation, based on
+\begin{align*}
+percentage &= \frac{\sum \text{differences}}{\sum \text{target voltages}}
+\end{align*}
+
+% 
+\begin{table}[hb]
+	\caption{Frequency³ vs. Gradient vs. Intercept approach}
+	\label{tbl:approximations}
+	\centering
+	\begin{tabular}{*{9}{r}}
+\hiderowcolors
+		\toprule			
+			&P1\,[V]&P2\,[V]&P3\,[V]&P4\,[V]&P5\,[V]&P6\,[V]&P7\,[V]&$\Delta$\,[\%]\\
+		\midrule
+			\multicolumn{9}{c}{Core 2 Extreme X6800}\\
+		\midrule
+\showrowcolors
+			Frequency³\,$\Delta$&%
+				-0.077&-0.170&-0.277&-0.378&-0.472&--&--&22.66\\
+			Gradient\,$\Delta$&%
+				-0.007&-0.028&-0.061&-0.093&-0.114&--&--&4.97\\
+			Intercept\,$\Delta$&%
+				0.007&0.000&-0.020&-0.038&-0.045&--&--&1.82\\
+		\midrule
+\hiderowcolors
+			\multicolumn{9}{c}{Athlon A64 X2 4800+}\\
+		\midrule
+\showrowcolors
+			Frequency³\,$\Delta$&%
+				-0.113&-0.200&-0.288&-0.350&-0.413&-0.475&-0.538&27.38\\
+			Gradient\,$\Delta$&%
+				-0.034&-0.043&-0.052&-0.036&-0.020&-0.004&0.012&2.32\\
+			Intercept\,$\Delta$&%
+				-0.034&-0.043&-0.052&-0.037&-0.021&-0.005&0.011&2.34\\
+		\midrule
+\hiderowcolors
+			\multicolumn{9}{c}{Athlon A64 X2 3600+}\\
+		\midrule
+\showrowcolors
+			Frequency³\,$\Delta$&%
+				-0.094&-0.189&-0.283&-0.378&--&--&--&20.09\\
+			Gradient\,$\Delta$&%
+				0.016&0.032&0.048&0.064&--&--&--&3.40\\
+			Intercept\,$\Delta$&%
+				0.010&0.020&0.030&0.040&--&--&--&2.13\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+%
+
+\superpar
+\noindent
+Table\,\ref{tbl:ppcverification} compares the measured power consumption with the calculated consumption based on the equations from section\,\ref{sec:pmv}.
+%\newpage
+% 
+\begin{longtable}{*{6}{r}}
+%\centering
+\caption{Processor Power Consumption Verification}\label{tbl:ppcverification}\\
+\hiderowcolors
+\toprule			
+f\,[GHz]&U\,[V]&P$_{measured}$\,[W]&P$_{calculated}$\,[W]&$\Delta$\,[W]&$\Delta$\,[\%]\\
+\midrule
+\endfirsthead
+
+%
+\caption*{Processor Power Consumption Verification}\\
+\hiderowcolors
+\toprule			
+f\,[GHz]&U\,[V]&P$_{measured}$\,[W]&P$_{calculated}$\,[W]&$\Delta$\,[W]&$\Delta$\,[\%]\\
+\midrule
+\endhead
+
+%
+\bottomrule
+\endfoot
+
+%
+%
+%		\midrule
+
+			\multicolumn{6}{c}{Athlon II X2 255}\\
+		\midrule
+\showrowcolors
+			3.1&1.40&111.6&115.2&3.59&3.12\\
+			3.2&1.40&113.1&117.2&4.13&3.52\\
+			3.4&1.40&116.4&121.3&4.90&4.04\\
+			3.6&1.40&120.5&125.4&4.88&3.89\\
+			3.8&1.50&140.9&140.9&0.00&0.00\\
+%
+%
+		\midrule
+\hiderowcolors
+			\multicolumn{6}{c}{Athlon II X4 635}\\
+		\midrule
+\showrowcolors
+			2.9&1.40&146.3&148.8&2.44&1.64\\
+			3.0&1.40&149.7&152.3&2.58&1.69\\
+			3.2&1.40&156.4&159.4&2.96&1.86\\
+			3.4&1.40&162.7&166.4&3.73&2.24\\
+			3.5&1.50&188.3&188.3&0.00&0.00\\
+%
+%
+		\midrule
+\hiderowcolors
+			\multicolumn{6}{c}{Athlon II X2 555}\\
+		\midrule
+\showrowcolors
+			3.2&1.40&122.7&133.9&11.20&8.36\\
+			3.4&1.40&125.9&137.9&11.96&8.67\\
+			3.6&1.40&128.3&141.8&13.52&9.53\\
+			3.8&1.40&130.8&145.8&14.97&10.27\\
+			4.0&1.55&167.6&167.6&0.00&0.00\\
+%
+%
+		\midrule
+\hiderowcolors
+			\multicolumn{6}{c}{Athlon II X4 965}\\
+		\midrule
+\showrowcolors
+			3.4&1.40&186.3&195.0&8.65&4.44\\
+			3.6&1.40&192.0&203.4&11.35&5.58\\
+			3.8&1.40&197.5&211.8&14.26&6.73\\
+			3.9&1.50&240.2&240.2&0.00&0.00\\
+%
+%
+		\midrule
+\hiderowcolors
+			\multicolumn{6}{c}{Core2Duo E7600}\\
+		\midrule
+\showrowcolors
+			3.06&1.28&95.5&101.3&5.81&5.73\\
+			3.2&1.28&97.3&103.9&6.59&6.34\\
+			3.4&1.28&100.6&107.6&6.98&6.49\\
+			3.6&1.28&103.9&111.3&7.37&6.63\\
+			3.8&1.35&116.7&123.5&6.75&5.47\\
+			4.0&1.50&147.0&147.0&0.00&0.00\\
+%
+%
+		\midrule
+\hiderowcolors
+			\multicolumn{6}{c}{Core2Quad Q9505}\\
+		\midrule
+\showrowcolors
+			2.83&1.28&125.9&127.8&1.93&1.51\\
+			3.0&1.28&132.6&133.4&0.78&0.59\\
+			3.2&1.28&138.8&139.9&1.12&0.80\\
+			3.4&1.28&145.6&146.5&0.85&0.58\\
+			3.6&1.28&150.3&153.0&2.69&1.76\\
+			3.8&1.35&172.3&174.6&2.26&1.29\\
+			3.9&1.40&189.0&189.0&0.00&0.00\\
+%
+%
+		\midrule
+\hiderowcolors
+			\multicolumn{6}{c}{Core i3-540}\\
+		\midrule
+\showrowcolors
+			3.07&1.13&85.9&86.8&0.88&1.02\\
+			3.2&1.13&88.1&88.8&0.69&0.78\\
+			3.4&1.20&106.7&99.1&7.58&7.65\\
+			3.6&1.20&109.6&102.6&6.96&6.78\\
+			3.8&1.30&118.3&117.8&0.54&0.46\\
+			4.0&1.30&120.2&121.9&1.68&1.38\\
+			4.2&1.38&136.3&136.3&0.00&0.00\\
+%
+%
+		\midrule
+\hiderowcolors
+			\multicolumn{6}{c}{Core i7-860}\\
+		\midrule
+\showrowcolors
+			2.8&1.13&154.1&160.6&6.45&4.02\\
+			3.0&1.13&158.5&167.9&9.40&5.60\\
+			3.2&1.13&165.0&175.3&10.25&5.85\\
+			3.4&1.13&170.6&182.6&11.99&6.57\\
+			3.6&1.20&201.4&208.2&6.76&3.25\\
+			3.8&1.20&241.7&244.1&2.40&0.98\\
+			4.0&1.38&277.2&277.2&0.00&0.00\\
+%
+%
+		\midrule
+\hiderowcolors
+			\multicolumn{6}{c}{Core i7-950}\\
+		\midrule
+\showrowcolors
+			3.07&1.20&189.8&181.6&8.24&4.54\\
+			3.2&1.20&203.7&188.2&15.49&8.23\\
+			3.4&1.20&212.3&198.5&13.85&6.98\\
+			3.6&1.20&219.9&208.7&11.22&5.38\\
+			3.8&1.20&234.4&218.9&15.48&7.07\\
+			4.0&1.30&264.9&264.7&0.21&0.08\\
+			4.2&1.40&317.0&317.0&0.00&0.00
+\end{longtable}
+%
+
+%
+%
+\newpage
+\section*{CPUFreq sysfs}
+\label{sec:cpufreqsysfs}
+Governor specific information and settings can be found under\\[1em]
+%
+\noindent
+\lstinline!$ ls -l /sys/devices/system/cpu/cpufreq/GOVERNOR!
+
+\begin{description}
+\item[ondemand] There are a number of sysfs file accessible parameters:
+%
+\begin{multicols}{2}
+\begin{itemize}
+\renewcommand{\labelitemi}{\drsh}
+\item \lstinline!sampling_rate!\\
+	this is how often the kernel should look at the CPU usage to make decisions on what to do about the frequency, in microseconds.
+
+\item \lstinline!show_sampling_rate_min!\\
+	The sampling rate is limited by the HW transition latency or by kernel restrictions.
+
+\item \lstinline!up_threshold!\\
+	defines what the average CPU usage between the samplings of \lstinline!sampling_rate! needs to be for the kernel to make a decision whether it should increase the frequency.  For example when it is set to its default value of 95 it means that between the checking intervals the CPU needs to be on average more than 95\,\% in use to decide that the CPU frequency needs to be increased.  
+
+\item \lstinline!ignore_nice_load!\\
+	this parameter takes a value of 0 or 1. When set to 0 (default), all processes are counted towards the
+``cpu utilisation'' value.  When set to 1, the processes that are run with a ``nice'' value will not count (and thus be ignored) in the overall usage calculation.  This is useful if CPU intensive calculations are running on a laptop and it is not important how long it takes to complete.
+\end{itemize}
+\end{multicols}
+%
+\item[conservative] The governor is tweaked in the same manner as the ``ondemand''-governor through sysfs with the addition of:
+%
+\begin{multicols}{2}
+\begin{itemize}
+\renewcommand{\labelitemi}{\drsh}
+\item \lstinline!freq_step!\\
+	this describes what percentage steps the CPU frequency should be increased and decreased smoothly by.  By default, the CPU frequency will increase in 5\,\% chunks of the maximum CPU frequency.  It is possible to change this value to anywhere between 0 and 100, where 0 will effectively lock the CPU at a speed regardless of its load whilst 100 will make it behave identically to the ``ondemand''-governor.
+
+\item \lstinline!down_threshold!\\
+	same as the \lstinline!up_threshold! found for the ``ondemand''-governor, but for the opposite direction.
+\end{itemize}
+\end{multicols}
+%
+\end{description}
+%
+
+\newpage
+\noindent
+Specific information per CPU X can be found under\\[1em]
+%
+\noindent
+\lstinline!$ ls -l /sys/devices/system/cpu/cpuX/cpufreq!
+%
+\begin{multicols}{2}
+\begin{itemize}
+\renewcommand{\labelitemi}{\drsh}
+\item \lstinline!bios_limit!\\
+	frequency limit as told by the BIOS.
+\item \lstinline!cpuinfo_min_freq!\\
+	the minimum operating frequency the processor can run at, in kHz.
+\item \lstinline!cpuinfo_max_freq!\\
+	the maximum operating frequency the processor can run at, in kHz. 
+\item \lstinline!cpuinfo_transition_latency!\\
+	the time it takes to switch between two frequencies, in nanoseconds.
+\item \lstinline!cpuinfo_cur_freq!\\
+	current frequency as obtained from the hardware in kHz. This is the frequency the CPU really runs at.
+\item \lstinline!scaling_available_governors!\\
+	available CPUFreq governors in this kernel. 
+\item \lstinline!scaling_available_frequencies!\\
+	available frequencies in kHz.
+\item \lstinline!scaling_governor!\\
+	currently activated used CPUFreq governor---``echoing'' the name of another governor changes it.
+\item \lstinline!scaling_cur_freq!\\
+	current frequency as determined by the governor and CPUFreq core in KHz. This is the frequency the kernel thinks the CPU runs at.
+\item \lstinline!scaling_driver!\\
+	used CPUFreq driver.
+\item \lstinline!scaling_setspeed!\\
+	if ``userspace''-governor is selected, current speed can be read here. Changing speed can be done by ``echoing'' a new frequency, but only within the limits of \lstinline!scaling_min_freq! and \lstinline!scaling_max_freq!.
+\item \lstinline!scaling_min_freq!\\
+	the current minimum frequency limit in kHz---``echoing'' a new value changes the limit.
+\item \lstinline!scaling_max_freq!\\
+	the current maximum frequency limit in kHz---``echoing'' a new value changes the limit. 
+\item \lstinline!affected_cpus!\\
+	CPUs that require software coordination of frequency.
+\item \lstinline!related_cpus!\\
+	CPUs that need some sort of frequency coordination, whether software or hardware.
+\end{itemize}
+\end{multicols}
+
+%
+%
+\section*{Tracing Test Script}
+\label{sec:stress}
+The following script is used to start\,/\,stop tracing, stressing the CPU using \lstinline!stress!\footnote{\url{http://weather.ou.edu/\,apw/projects/stress/}} and writing to HDD with \lstinline!dd!. It is based on the script used in \cite{krempel}.
+\lstinputlisting[language=bash, numbers=left, caption={Tracing Test Script}]{../work/RUT_2.sh}
+
+%
+%
+\newpage
+\section*{Tools and Software}
+A bunch of great free and open tools has been used to produce this thesis:
+%
+\begin{itemize}
+	\item \emph{\TeX works}\,\footnote{\url{http://code.google.com/p/texworks/}} for writing and \emph{lua\LaTeX}\,\footnote{\url{http://www.luatex.org/}} for producing text,
+	\item \emph{LibreOffice Calc}\,\footnote{\url{http://www.libreoffice.org/}} for data analysis,
+	\item \emph{Gnuplot}\,\footnote{\url{http://www.gnuplot.info/}} for plotting data and \emph{PGF/TikZ}\,\footnote{\url{http://sourceforge.net/projects/pgf/}} for generating graphics, as well as \emph{GIMP}\,\footnote{\url{http://www.gimp.org/}} for screenshot modifications,
+	\item \emph{Eclipse}\,\footnote{\url{http://www.eclipse.org/}} for writing and exploring code,
+	\item revision control systems \emph{git}\,\footnote{\url{http://git-scm.com/}} for code and \emph{subversion}\,\footnote{\url{http://subversion.apache.org/}} for the thesis.
+\end{itemize}
+ %
+Fonts used in this thesis are \emph{Linux Libertine}\,\footnote{\url{http://www.linuxlibertine.org/}} as serif font, \emph{Linux Biolinum}\,\footnotemark as sans-serif font, \emph{DejaVu Sans Mono}\,\footnote{\url{http://dejavu-fonts.org/}} as monospace font and the standard math font from \emph{Computer Modern}.
+
+%
+%
+\newpage
+\section*{Citations}
+These nice citations were used at the headings of each chapter:
+\begin{description}
+\item[Andreas Bogk] ``UNIX is user-friendly, it just chooses its friends.''\footnote{\url{http://chaosradio.ccc.de/cr40.html}}
+%
+\item[Gordon E. Moore] ``The complexity for minimum component costs has increased at a rate of roughly a factor of two per year... Certainly over the short term this rate can be expected to continue, if not to increase. Over the longer term, the rate of increase is a bit more uncertain, although there is no reason to believe it will not remain nearly constant for at least 10 years. That means by 1975, the number of components per integrated circuit for minimum cost will be 65,000. I believe that such a large circuit can be built on a single wafer.''\footnote{\url{ftp://download.intel.com/museum/Moores_Law/Articles-Press_Releases/Gordon_Moore_1965_Article.pdf}}
+%
+\item[Bill Gates] ``One thing I find myself wondering about is whether we shouldn't try and make the `ACPI' extensions somehow Windows specific. [\dots] Or maybe we could patent something related to this.''\footnote{\url{http://antitrust.slated.org/www.iowaconsumercase.org/011607/3000/PX03020.pdf}}
+%
+\item[Verity Stob] ``The primary duty of an exception handler is to get the error out of the lap of the programmer and into the surprised face of the user.''\footnote{\url{http://www.regdeveloper.co.uk/2006/01/11/exception_handling/page2.html}}
+%
+\item[David H. Baley] ``12.  If all else fails, show pretty pictures and animated videos, and don't talk about performance.''\footnote{\url{http://crd.lbl.gov/\,dhbailey/dhbpapers/twelve-ways.pdf}}
+\end{description}

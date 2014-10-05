@@ -1,0 +1,32 @@
+% !TeX program = lualatex
+% !TeX root = ../../main.tex
+\begin{tikzpicture}[every node/.style={text centered}]
+	\draw 	(0, 0)		node[rectangle, draw, text width=3.5em, minimum height=3.5em]
+				{\large{Core 0}}
+			(0, -2.4em)	node[rectangle, draw, text width=3.5em, minimum height=1.3em, fill=gray!20] 
+				{\small{Freq}}
+			(0, -3.7em)	node[rectangle, draw, text width=3.5em, minimum height=1.3em, fill=gray!40] 
+				{\small{Vcore}}
+
+			(4.5em, 0)		node[rectangle, draw, text width=3.5em, minimum height=3.5em]
+				{\large{Core 1}}
+			(4.5em, -2.4em)	node[rectangle, draw, text width=3.5em, minimum height=1.3em, fill=gray!20]
+				{\small{Freq}}
+			(4.5em, -3.7em)	node[rectangle, draw, text width=3.5em, minimum height=1.3em, fill=gray!40]
+				{\small{Vcore}}
+
+			(0, -6.5em)		node[rectangle, draw, text width=3.5em, minimum height=3.5em]
+				{\large{Core 2}}
+			(0, -8.9em)	node[rectangle, draw, text width=3.5em, minimum height=1.3em, fill=gray!20]
+				{\small{Freq}}
+			(0, -10.2em)	node[rectangle, draw, text width=3.5em, minimum height=1.3em, fill=gray!40]
+				{\small{Vcore}}
+
+			(4.5em, -6.5em)		node[rectangle, draw, text width=3.5em, minimum height=3.5em]
+				{\large{Core 3}}
+			(4.5em, -8.9em)	node[rectangle, draw, text width=3.5em, minimum height=1.3em, fill=gray!20]
+				{\small{Freq}}
+			(4.5em, -10.2em)	node[rectangle, draw, text width=3.5em, minimum height=1.3em, fill=gray!40]
+				{\small{Vcore}}
+;
+\end{tikzpicture}

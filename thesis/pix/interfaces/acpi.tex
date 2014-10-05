@@ -1,0 +1,52 @@
+% !TeX program = lualatex
+% !TeX root = ../../main.tex
+\begin{tikzpicture}[shorten >=1pt, thick, out=10, in=170, relative]
+\draw 	(0,0) node[circle, minimum size=5em, inner sep=5pt, draw] (L) {Legacy}
+		(5em,5em) node[circle split, minimum size=5em, inner sep=5pt, draw] (G3) 
+			{G3 \nodepart{lower} \small{Mech Off}}
+		(5em,-5em) node[circle split, minimum size=5em, inner sep=5pt, draw] (G2) 
+			{G2 (S5) \nodepart{lower} \small{Soft Off}}
+		(10em,0) node[circle split, minimum size=5em, inner sep=5pt, draw] (G0) 
+			{G0 (S0) \nodepart{lower} \small{Working}}
+		(13em,5em) node (Power) 
+			{\small{Power Off}}
+		(20em,0) node[circle split, minimum size=5em, inner sep=5pt, draw] (G1)
+			{G1 \nodepart{lower} \small{Sleeping}}
+
+
+		(0,-10em) node[circle split, minimum size=5em, inner sep=5pt, draw] (C0)
+			{C0 (Px) \nodepart{lower} \small{CPU}}
+		(10em,-10em) node[circle, minimum size=5em, inner sep=5pt] (C1)
+			{\ldots}
+		(20em,-10em) node[circle split, minimum size=5em, inner sep=5pt, draw] (Cn)
+			{Cn \nodepart{lower} \small{CPU}}
+;
+\begin{scope}[circle, node distance=0em and 0em]
+		\node[above right=of G1, draw] (S1) {S1};
+		\node[right=of G1, draw] (S2) {S2};
+		\node[below right=of G1, draw] (S3) {S3};
+		\node[below=of G1, draw] (S4) {S4};
+
+%		\node[above left=of C0, draw] (P0) {P0};
+%		\node[left=of C0, draw] {\vdots};
+%		\node[below left=of C0, draw] {Pn};
+\end{scope}
+
+		\draw[->] (G1) to node[below, sloped] {\small{Wake Event}} (G0);
+		\draw[->] (L) to (G0);
+		\draw[->] (G0) to (L);
+		\draw[->] (G2) to (L);
+		\draw[<-] (L) to (G3);
+		\draw[->] (G3) to (G0);
+		\draw[->] (G0) to (G2);
+		\draw[->] (G2) to (G0);
+		\draw[->] (G0) to (G1);
+		\draw[<-] (G3) to (Power);
+
+		\draw[->] (C0) to (C1);
+		\draw[->, out=15, in=165, relative] (C0) to (Cn);
+		\draw[->] (C1) to (Cn);
+		\draw[->] (C1) to (C0);
+		\draw[->, out=15, in=165, relative] (Cn) to (C0);
+		\draw[->] (Cn) to (C1);
+\end{tikzpicture}
